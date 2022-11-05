@@ -1,0 +1,1377 @@
+{
+	"info": {
+		"_postman_id": "38e35167-2d32-4508-9d43-1ae677e3ae43",
+		"name": "Backoffice Admin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "master-data",
+			"item": [
+				{
+					"name": "health check",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authenticate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"kaka\",\n    \"password\": \"P@ssw0rd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authenticate form-data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "kaka",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get LDAP info",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/ldap/sanit.v_ocptest@kbankpocnet.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ldap",
+								"sanit.v_ocptest@kbankpocnet.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get privileges",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imtha2FAZ21haWwuY29tIiwiZXhwIjoxNjM4MDEwODMxLCJpYXQiOjE2Mzc5MjQ0MzEsImlwIjoiOjoxIiwidXNlcklkIjoiMDAwMDUiLCJ1c2VybmFtZSI6Imtha2EifQ.SQPS-RA6PntuGSSYx-yOPWQHePraGfuVtB9ZRcavLyQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/privileges",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"privileges"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get privileges by user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/KTM00190/privileges",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"KTM00190",
+								"privileges"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get roles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im54a2hhbmhAZ21haWwuY29tIiwiZXhwIjoxNjIzMzgyNjA4LCJpYXQiOjE2MjMyOTYyMDgsImlwIjoiOjoxIiwidXNlcklkIjoiMDAwMDUiLCJ1c2VybmFtZSI6ImtoYW5oLm4ifQ.rHweoNHeAMF5uJS9Yvb51KYsuY9qklDLzG8Zf33JXj0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get codes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im54a2hhbmhAdG1hLmNvbS52biIsImV4cCI6MTYxODgzMDUyMSwiaWF0IjoxNjE4NzQ0MTIxLCJpcCI6Ijo6MSIsInVzZXJJZCI6IktUTTAwMTkwIiwidXNlcm5hbWUiOiJraGFuaC5uIn0.aNdeBsJeqpc_F9UUwmZ3zlMv-PfTCMF8e9gu__P_Ivw"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/code/AuditLog",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"code",
+								"AuditLog"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "audit-log",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/audit-logs/search?limit=3&page=2&resource=user&timestamp=2021-12-20T08:12:11.000Z&sort=userId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"audit-logs",
+								"search"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "3"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "resource",
+									"value": "user"
+								},
+								{
+									"key": "timestamp",
+									"value": "2021-12-20T08:12:11.000Z"
+								},
+								{
+									"key": "timestamp.top",
+									"value": "2021-12-21T08:12:11.000Z",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "userId"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "audit-log",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"limit\": 6,\n    \"page\": 1,\n\t\"timestamp\": {\n        \"min\": \"2021-12-20T08:12:11.000Z\",\n        \"top\": \"2021-12-21T08:12:11.000Z\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/audit-logs/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"audit-logs",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "roles",
+			"item": [
+				{
+					"name": "roles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im54a2hhbmhAdG1hLmNvbS52biIsImV4cCI6MTYxODgzMDUyMSwiaWF0IjoxNjE4NzQ0MTIxLCJpcCI6Ijo6MSIsInVzZXJJZCI6IktUTTAwMTkwIiwidXNlcm5hbWUiOiJraGFuaC5uIn0.aNdeBsJeqpc_F9UUwmZ3zlMv-PfTCMF8e9gu__P_Ivw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search roles",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imtha2FAZ21haWwuY29tIiwiZXhwIjoxNjM4MDEwODMxLCJpYXQiOjE2Mzc5MjQ0MzEsImlwIjoiOjoxIiwidXNlcklkIjoiMDAwMDUiLCJ1c2VybmFtZSI6Imtha2EifQ.SQPS-RA6PntuGSSYx-yOPWQHePraGfuVtB9ZRcavLyQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"pageSize\": 6,\n    \"pageIndex\": 1,\n\t\"roleName\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/roles/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roles",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search roles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/roles/search?pageSize=3&pageIndex=2&sort=roleName",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roles",
+								"search"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "3"
+								},
+								{
+									"key": "pageIndex",
+									"value": "2"
+								},
+								{
+									"key": "sort",
+									"value": "roleName"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get role by ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAwMDA1IiwidXNlcm5hbWUiOiJrYWthIiwiZW1haWwiOiJrYWthQGdtYWlsLmNvbSIsImlhdCI6MTY0NzU5MjU0NywiZXhwIjoxNzMzOTkyNTQ3fQ.Ql91CU8Ds51N0ML2mfosN3aOKU72FkecekX9P0XWpuo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/roles/product_owner",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roles",
+								"product_owner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insert role",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imtha2FAZ21haWwuY29tIiwiZXhwIjoxNjI5NzM3MTkwLCJpYXQiOjE2Mjk2NTA3OTAsImlwIjoiOjoxIiwidXNlcklkIjoiMDAwMDUiLCJ1c2VybmFtZSI6Imtha2EifQ.C3DI28z8I-2OXqXmWd9x1_ISNLA4q-Y3CfJ6RVgnT7U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleId\": \"product_owner2\",\r\n    \"roleName\": \"Product Owner2\",\r\n    \"status\": \"A\",\r\n    \"remark\": \"Product Owner\",\r\n    \"createdAt\": \"2021-09-01T11:16:44+07:00\",\r\n    \"updatedAt\": \"0001-01-01T00:00:00Z\",\r\n    \"privileges\": [\r\n        \"admin 7\",\r\n        \"company 7\",\r\n        \"dashboard 7\",\r\n        \"fee 7\",\r\n        \"group 7\",\r\n        \"merchant 7\",\r\n        \"merchant_fee_report 7\",\r\n        \"merchant_report 7\",\r\n        \"operation_report 7\",\r\n        \"product 7\",\r\n        \"report 7\",\r\n        \"setup 7\",\r\n        \"summary_report 7\",\r\n        \"transaction_report 7\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update role",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im54a2hhbmhAdG1hLmNvbS52biIsImV4cCI6MTYxODEzODk4OSwiaWF0IjoxNjE4MDUyNTg5LCJpcCI6Ijo6MSIsInVzZXJJZCI6IktUTTAwMTkwIiwidXNlcm5hbWUiOiJraGFuaC5uIn0.D5ye7sNc_eZz4WHw0GpDEgEpbPdoZ8Ys1tu8LfecXPU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleId\": \"product_owner2\",\r\n    \"status\": \"A\",\r\n    \"remark\": \"Product Owner2\",\r\n    \"createdBy\": \"\",\r\n    \"creationTime\": \"2021-03-09T17:47:05+07:00\",\r\n    \"updatedBy\": \"\",\r\n    \"updateTime\": \"2021-03-09T17:48:38+07:00\",\r\n    \"privileges\": [\r\n        \"operation_report 7\",\r\n        \"master 7\",\r\n        \"transaction_log 7\",\r\n        \"channel 7\",\r\n        \"public_holiday 7\",\r\n        \"transaction_report 7\",\r\n        \"merchant 7\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/roles/product_owner2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roles",
+								"product_owner2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch role",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im54a2hhbmhAdG1hLmNvbS52biIsImV4cCI6MTYxODEzODk4OSwiaWF0IjoxNjE4MDUyNTg5LCJpcCI6Ijo6MSIsInVzZXJJZCI6IktUTTAwMTkwIiwidXNlcm5hbWUiOiJraGFuaC5uIn0.D5ye7sNc_eZz4WHw0GpDEgEpbPdoZ8Ys1tu8LfecXPU"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleId\": \"product_owner2\",\r\n    \"status\": \"A\",\r\n    \"remark\": \"Product Owner2\",\r\n    \"createdBy\": \"\",\r\n    \"creationTime\": \"2021-03-09T17:47:05+07:00\",\r\n    \"updatedBy\": \"\",\r\n    \"updateTime\": \"2021-03-09T17:48:38+07:00\",\r\n    \"privileges\": [\r\n        \"operation_report 7\",\r\n        \"master 7\",\r\n        \"transaction_log 7\",\r\n        \"channel 7\",\r\n        \"public_holiday 7\",\r\n        \"transaction_report 7\",\r\n        \"merchant 7\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/roles/product_owner2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roles",
+								"product_owner2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete role",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im54a2hhbmhAdG1hLmNvbS52biIsImV4cCI6MTYxODEzODk4OSwiaWF0IjoxNjE4MDUyNTg5LCJpcCI6Ijo6MSIsInVzZXJJZCI6IktUTTAwMTkwIiwidXNlcm5hbWUiOiJraGFuaC5uIn0.D5ye7sNc_eZz4WHw0GpDEgEpbPdoZ8Ys1tu8LfecXPU"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleId\": \"product_owner6\",\r\n    \"roleName\": \"Product Owner\",\r\n    \"status\": \"A\",\r\n    \"remark\": \"Product Owner\",\r\n    \"createdBy\": \"KTM00190\",\r\n    \"creationDate\": \"2020-11-11T11:34:39+07:00\",\r\n    \"lastUpdateDate\": \"0001-01-01T00:00:00Z\",\r\n    \"features\": [\r\n        {\r\n            \"id\": \"FBP\",\r\n            \"name\": \"FBP\",\r\n            \"product\": true,\r\n            \"single\": false,\r\n            \"feature\": false,\r\n            \"permissions\": 0,\r\n            \"children\": [\r\n                {\r\n                    \"id\": \"company\",\r\n                    \"name\": \"Company Profile\",\r\n                    \"product\": false,\r\n                    \"single\": false,\r\n                    \"feature\": false,\r\n                    \"permissions\": 7\r\n                },\r\n                {\r\n                    \"id\": \"fee\",\r\n                    \"name\": \"Fee Profile\",\r\n                    \"product\": false,\r\n                    \"single\": false,\r\n                    \"feature\": false,\r\n                    \"permissions\": 7\r\n                },\r\n                {\r\n                    \"id\": \"merchant\",\r\n                    \"name\": \"Merchant Profile\",\r\n                    \"product\": false,\r\n                    \"single\": false,\r\n                    \"feature\": false,\r\n                    \"permissions\": 7\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"id\": \"OBP\",\r\n            \"name\": \"OBP\",\r\n            \"product\": true,\r\n            \"single\": false,\r\n            \"feature\": false,\r\n            \"permissions\": 0,\r\n            \"children\": [\r\n                {\r\n                    \"id\": \"company\",\r\n                    \"name\": \"Company Profile\",\r\n                    \"product\": false,\r\n                    \"single\": false,\r\n                    \"feature\": false,\r\n                    \"permissions\": 7\r\n                },\r\n                {\r\n                    \"id\": \"fee\",\r\n                    \"name\": \"Fee Profile\",\r\n                    \"product\": false,\r\n                    \"single\": false,\r\n                    \"feature\": false,\r\n                    \"permissions\": 7\r\n                },\r\n                {\r\n                    \"id\": \"merchant\",\r\n                    \"name\": \"Merchant Profile\",\r\n                    \"product\": false,\r\n                    \"single\": false,\r\n                    \"feature\": false,\r\n                    \"permissions\": 7\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"id\": \"ODD\",\r\n            \"name\": \"ODD\",\r\n            \"product\": true,\r\n            \"single\": false,\r\n            \"feature\": false,\r\n            \"permissions\": 0,\r\n            \"children\": [\r\n                {\r\n                    \"id\": \"company\",\r\n                    \"name\": \"Company Profile\",\r\n                    \"product\": false,\r\n                    \"single\": false,\r\n                    \"feature\": false,\r\n                    \"permissions\": 7\r\n                },\r\n                {\r\n                    \"id\": \"fee\",\r\n                    \"name\": \"Fee Profile\",\r\n                    \"product\": false,\r\n                    \"single\": false,\r\n                    \"feature\": false,\r\n                    \"permissions\": 7\r\n                },\r\n                {\r\n                    \"id\": \"merchant\",\r\n                    \"name\": \"Merchant Profile\",\r\n                    \"product\": false,\r\n                    \"single\": false,\r\n                    \"feature\": false,\r\n                    \"permissions\": 7\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"id\": \"dashboard\",\r\n            \"name\": \"Dashboard\",\r\n            \"product\": false,\r\n            \"single\": true,\r\n            \"feature\": false,\r\n            \"permissions\": 7\r\n        },\r\n        {\r\n            \"id\": \"operation\",\r\n            \"name\": \"Operation\",\r\n            \"product\": false,\r\n            \"single\": true,\r\n            \"feature\": false,\r\n            \"permissions\": 7,\r\n            \"children\": [\r\n                {\r\n                    \"id\": \"admin\",\r\n                    \"name\": \"Admin Search\",\r\n                    \"product\": false,\r\n                    \"single\": true,\r\n                    \"feature\": false,\r\n                    \"permissions\": 7\r\n                },\r\n                {\r\n                    \"id\": \"transaction_log\",\r\n                    \"name\": \"Transaction Log\",\r\n                    \"product\": false,\r\n                    \"single\": true,\r\n                    \"feature\": false,\r\n                    \"permissions\": 7\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"id\": \"company_group\",\r\n            \"name\": \"Company\",\r\n            \"product\": false,\r\n            \"single\": true,\r\n            \"feature\": false,\r\n            \"permissions\": 7,\r\n            \"children\": [\r\n                {\r\n                    \"id\": \"product\",\r\n                    \"name\": \"Product Profile\",\r\n                    \"product\": false,\r\n                    \"single\": true,\r\n                    \"feature\": false,\r\n                    \"permissions\": 7\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"id\": \"report\",\r\n            \"name\": \"Report\",\r\n            \"product\": false,\r\n            \"single\": true,\r\n            \"feature\": false,\r\n            \"permissions\": 7,\r\n            \"children\": [\r\n                {\r\n                    \"id\": \"merchant_report\",\r\n                    \"name\": \"Merchant Report\",\r\n                    \"product\": false,\r\n                    \"single\": true,\r\n                    \"feature\": false,\r\n                    \"permissions\": 7\r\n                },\r\n                {\r\n                    \"id\": \"transaction_report\",\r\n                    \"name\": \"Transaction Report\",\r\n                    \"product\": false,\r\n                    \"single\": true,\r\n                    \"feature\": false,\r\n                    \"permissions\": 7\r\n                },\r\n                {\r\n                    \"id\": \"summary_report\",\r\n                    \"name\": \"Summary Report\",\r\n                    \"product\": false,\r\n                    \"single\": true,\r\n                    \"feature\": false,\r\n                    \"permissions\": 7\r\n                },\r\n                {\r\n                    \"id\": \"merchant_fee_report\",\r\n                    \"name\": \"Merchant Fee Report\",\r\n                    \"product\": false,\r\n                    \"single\": true,\r\n                    \"feature\": false,\r\n                    \"permissions\": 7\r\n                },\r\n                {\r\n                    \"id\": \"operation_report\",\r\n                    \"name\": \"Operation Report\",\r\n                    \"product\": false,\r\n                    \"single\": true,\r\n                    \"feature\": false,\r\n                    \"permissions\": 7\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"id\": \"master\",\r\n            \"name\": \"Master Setup\",\r\n            \"product\": false,\r\n            \"single\": true,\r\n            \"feature\": false,\r\n            \"permissions\": 7\r\n        },\r\n        {\r\n            \"id\": \"parameter\",\r\n            \"name\": \"Parameter Setup\",\r\n            \"product\": false,\r\n            \"single\": true,\r\n            \"feature\": false,\r\n            \"permissions\": 7,\r\n            \"children\": [\r\n                {\r\n                    \"id\": \"fee_parameter\",\r\n                    \"name\": \"Fee Parameter\",\r\n                    \"product\": false,\r\n                    \"single\": true,\r\n                    \"feature\": false,\r\n                    \"permissions\": 7\r\n                },\r\n                {\r\n                    \"id\": \"channel\",\r\n                    \"name\": \"Channel\",\r\n                    \"product\": false,\r\n                    \"single\": true,\r\n                    \"feature\": false,\r\n                    \"permissions\": 7\r\n                },\r\n                {\r\n                    \"id\": \"accounting\",\r\n                    \"name\": \"Accounting/GL\",\r\n                    \"product\": false,\r\n                    \"single\": true,\r\n                    \"feature\": true,\r\n                    \"permissions\": 7\r\n                },\r\n                {\r\n                    \"id\": \"branch\",\r\n                    \"name\": \"Branch\",\r\n                    \"product\": false,\r\n                    \"single\": true,\r\n                    \"feature\": false,\r\n                    \"permissions\": 7\r\n                },\r\n                {\r\n                    \"id\": \"public_holiday\",\r\n                    \"name\": \"Public Holiday\",\r\n                    \"product\": false,\r\n                    \"single\": true,\r\n                    \"feature\": false,\r\n                    \"permissions\": 0\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"id\": \"uam\",\r\n            \"name\": \"User Control\",\r\n            \"product\": false,\r\n            \"single\": true,\r\n            \"feature\": false,\r\n            \"permissions\": 0,\r\n            \"children\": [\r\n                {\r\n                    \"id\": \"user\",\r\n                    \"name\": \"User Management\",\r\n                    \"product\": false,\r\n                    \"single\": true,\r\n                    \"feature\": false,\r\n                    \"permissions\": 0\r\n                },\r\n                {\r\n                    \"id\": \"role\",\r\n                    \"name\": \"Role Management\",\r\n                    \"product\": false,\r\n                    \"single\": true,\r\n                    \"feature\": false,\r\n                    \"permissions\": 0\r\n                },\r\n                {\r\n                    \"id\": \"audit_log\",\r\n                    \"name\": \"Audit Log\",\r\n                    \"product\": false,\r\n                    \"single\": true,\r\n                    \"feature\": false,\r\n                    \"permissions\": 0\r\n                },\r\n                {\r\n                    \"id\": \"activity_log\",\r\n                    \"name\": \"Activity Log\",\r\n                    \"product\": false,\r\n                    \"single\": true,\r\n                    \"feature\": false,\r\n                    \"permissions\": 0\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/roles/Ozucu2GYM",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roles",
+								"Ozucu2GYM"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "search users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im54a2hhbmhAdG1hLmNvbS52biIsImV4cCI6MTYxODM3MjU4OCwiaWF0IjoxNjE4Mjg2MTg4LCJpcCI6Ijo6MSIsInVzZXJJZCI6IktUTTAwMTkwIiwidXNlcm5hbWUiOiJraGFuaC5uIn0.o3Pw1hzNsNnqA9lrAcIjyudNGGlHxb0_IQAkwvK72h8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"limit\": 5,\r\n    \"page\": 2,\r\n    \"username\": \"d\",\r\n    \"sort\": \"username,-displayName\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im54a2hhbmhAdG1hLmNvbS52biIsImV4cCI6MTYyMzIyMTkyOSwiaWF0IjoxNjIzMTM1NTI5LCJpcCI6Ijo6MSIsInVzZXJJZCI6IktUTTAwMTkwIiwidXNlcm5hbWUiOiJraGFuaC5uIn0.-siElJ-vYYb0J-sbnvVBcryb2ryJAN1ZxzSWpeYkf8s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/search?pageSize=3&pageIndex=2&sort=-username&fields=userId,username,email,status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"search"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "3"
+								},
+								{
+									"key": "pageIndex",
+									"value": "2"
+								},
+								{
+									"key": "sort",
+									"value": "-username"
+								},
+								{
+									"key": "fields",
+									"value": "userId,username,email,status"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user by ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAwMDA1IiwidXNlcm5hbWUiOiJrYWthIiwiZW1haWwiOiJrYWthQGdtYWlsLmNvbSIsImlhdCI6MTY0MDgwMDg4OSwiZXhwIjoxNzI3MjAwODg5fQ.pw1SkhzYs7bE8UzJcVyrMeRJTvxzIoM-2dCOiBBvFE8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/00001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"00001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insert user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im54a2hhbmhAdG1hLmNvbS52biIsImV4cCI6MTYxODkwNDI4NiwiaWF0IjoxNjE4ODE3ODg2LCJpcCI6Ijo6MSIsInVzZXJJZCI6IktUTTAwMTkwIiwidXNlcm5hbWUiOiJraGFuaC5uIn0.F1TBbfmLJMk8rWTb5UjyxUz0SMQuslan0He8YYtXrUc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"00041\",\r\n    \"username\": \"gareth.bale\",\r\n    \"email\": \"gareth.bale@gmail.com\",\r\n    \"displayName\": \"Gareth Bale\",\r\n    \"status\": \"A\",\r\n    \"gender\": \"M\",\r\n    \"phone\": \"0987654321\",\r\n    \"title\": \"Mr\",\r\n    \"position\": \"M\",\r\n    \"imageURL\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Liver-RM_%282%29_%28cropped%29.jpg/440px-Liver-RM_%282%29_%28cropped%29.jpg\",\r\n    \"roles\": [\r\n        \"admin\",\r\n        \"it_support\",\r\n        \"operator\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imtha2FAZ21haWwuY29tIiwiZXhwIjoxNjM1NzM1NDQxLCJpYXQiOjE2MzU2NDkwNDEsImlwIjoiOjoxIiwidXNlcklkIjoiMDAwMDUiLCJ1c2VybmFtZSI6Imtha2EifQ.MhDOzF4XNYPb4-Ke_N1Jzs_pCSChHKIoDriDC_6lTBM",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"00001\",\r\n    \"username\": \"gareth.bale\",\r\n    \"email\": \"gareth.bale@gmail.com\",\r\n    \"displayName\": \"Gareth Bale\",\r\n    \"imageURL\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Liver-RM_%282%29_%28cropped%29.jpg/440px-Liver-RM_%282%29_%28cropped%29.jpg\",\r\n    \"status\": \"A\",\r\n    \"gender\": \"M\",\r\n    \"phone\": \"0987654321\",\r\n    \"title\": \"Mr\",\r\n    \"position\": \"M\",\r\n    \"createdAt\": \"2021-10-29T08:27:25+07:00\",\r\n    \"updatedBy\": \"00005\",\r\n    \"updatedAt\": \"2021-10-29T08:26:59+07:00\",\r\n    \"roles\": [\r\n        \"admin\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/00001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"00001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch user",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imtha2FAZ21haWwuY29tIiwiZXhwIjoxNjM1NzM1NDQxLCJpYXQiOjE2MzU2NDkwNDEsImlwIjoiOjoxIiwidXNlcklkIjoiMDAwMDUiLCJ1c2VybmFtZSI6Imtha2EifQ.MhDOzF4XNYPb4-Ke_N1Jzs_pCSChHKIoDriDC_6lTBM"
+							},
+							{
+								"key": "",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"gareth.bale4@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/00001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"00001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im54a2hhbmhAdG1hLmNvbS52biIsImV4cCI6MTYxNTUzODk4MCwiaWF0IjoxNjE1NDUyNTgwLCJpcCI6Ijo6MSIsInJvbGVJZCI6Iml0X3N1cHBvcnQiLCJ1c2VySWQiOiJLVE0wMDE5MCIsInVzZXJuYW1lIjoia2hhbmgubiJ9.wEN5cR4ROPbqQwX5KX7lH_lUZioq3XR4q1fZyBhlGIc",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/p8kCk5UYM",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"p8kCk5UYM"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "assign",
+			"item": [
+				{
+					"name": "get users by role",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imtha2FAZ21haWwuY29tIiwiZXhwIjoxNjMwOTIyODIwLCJpYXQiOjE2MzA4MzY0MjAsImlwIjoiOjoxIiwidXNlcklkIjoiMDAwMDUiLCJ1c2VybmFtZSI6Imtha2EifQ._2AIQsSt5itVTZU-XDCWvcwysho7VO8zcR-lPSyNj1k"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users?roleId=call_center",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "roleId",
+									"value": "call_center"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assign users to role",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im54a2hhbmhAZ21haWwuY29tIiwiZXhwIjoxNjIzMzgyNjA4LCJpYXQiOjE2MjMyOTYyMDgsImlwIjoiOjoxIiwidXNlcklkIjoiMDAwMDUiLCJ1c2VybmFtZSI6ImtoYW5oLm4ifQ.rHweoNHeAMF5uJS9Yvb51KYsuY9qklDLzG8Zf33JXj0"
+							},
+							{
+								"key": "",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    \"00008\",\r\n    \"00010\",\r\n    \"00012\"\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/roles/call_center/assign",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roles",
+								"call_center",
+								"assign"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "audit-logs",
+			"item": [
+				{
+					"name": "search audit logs",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im54a2hhbmhAdG1hLmNvbS52biIsImV4cCI6MTYxODM3MjU4OCwiaWF0IjoxNjE4Mjg2MTg4LCJpcCI6Ijo6MSIsInVzZXJJZCI6IktUTTAwMTkwIiwidXNlcm5hbWUiOiJraGFuaC5uIn0.o3Pw1hzNsNnqA9lrAcIjyudNGGlHxb0_IQAkwvK72h8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"limit\": 40,\r\n    \"page\": 1,\r\n    \"resource\": \"authentication\",\r\n    \"timestamp\": {\r\n        \"min\": \"2021-09-16T05:52:21.000Z\",\r\n        \"max\": \"2021-09-19T05:52:21.000Z\"\r\n    },\r\n    \"sort\": \"timestamp\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/audit-logs/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"audit-logs",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search audit logs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/audit-logs/search?pageSize=100&pageIndex=1&sort=timestamp&timestamp.min=2021-09-16T05:52:21.000Z&timestamp.max=2021-09-19T05:52:21.000Z&resource=authentication",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"audit-logs",
+								"search"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "100"
+								},
+								{
+									"key": "pageIndex",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": "timestamp"
+								},
+								{
+									"key": "timestamp.min",
+									"value": "2021-09-16T05:52:21.000Z"
+								},
+								{
+									"key": "timestamp.max",
+									"value": "2021-09-19T05:52:21.000Z"
+								},
+								{
+									"key": "resource",
+									"value": "authentication"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get audit log",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/audit-logs/dJ1yBk-fM",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"audit-logs",
+								"dJ1yBk-fM"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
